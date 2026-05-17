@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All My Work — Kiriacos</title>
+  <meta name="description" content="Complete portfolio of Kiriacos — all album covers, branding systems and art direction for music artists." />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/work.css" />
+</head>
+<body>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Kiriacos — Home">
+        Kiriacos<span>.</span>
+      </a>
+
+      <nav class="navbar-links" aria-label="Main navigation">
+        <a href="index.html#home" class="navbar-link">Home</a>
+        <a href="index.html#about" class="navbar-link">About</a>
+        <a href="index.html#projects" class="navbar-link">Projects</a>
+        <a href="index.html#contact" class="navbar-link">Contact</a>
+      </nav>
+
+      <div class="navbar-cta">
+        <a href="index.html#contact" class="btn btn-primary">Let's talk</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="index.html#home" class="navbar-link">Home</a>
+    <a href="index.html#about" class="navbar-link">About</a>
+    <a href="index.html#projects" class="navbar-link">Projects</a>
+    <a href="index.html#contact" class="navbar-link">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- ── Page hero ── -->
+    <div class="container">
+      <div class="work-page-hero reveal">
+        <a href="index.html" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to main site
+        </a>
+        <h1 class="work-page-title">All<br><span style="color: var(--color-accent);">my work.</span></h1>
+        <p class="work-page-subtitle">
+          Every project, every artist. A complete look at what I've built in the music industry.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Artist sections — built by JS ── -->
+    <div class="container" id="workSections"></div>
+
+    <!-- ── Footer CTA ── -->
+    <div class="container">
+      <div class="work-page-footer-cta reveal">
+        <h2>Let's create something<br><span style="color: var(--color-accent);">together.</span></h2>
+        <p>Have a project in mind? I'd love to hear about it.</p>
+        <a href="index.html#contact" class="btn btn-primary" style="font-size: var(--text-base); padding: var(--space-4) var(--space-8);">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Kiriacos — Home">Kiriacos<span>.</span></a>
+          <p class="footer-tagline">Graphic designer specialized in the music industry. Album covers, branding and art direction for international artists.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-group">
+            <p class="footer-nav-heading">Navigation</p>
+            <a href="index.html#home" class="footer-nav-link">Home</a>
+            <a href="index.html#about" class="footer-nav-link">About</a>
+            <a href="index.html#projects" class="footer-nav-link">Projects</a>
+            <a href="index.html#contact" class="footer-nav-link">Contact</a>
+          </div>
+          <div class="footer-nav-group">
+            <p class="footer-nav-heading">Social</p>
+            <a href="https://instagram.com/kiriacospsd" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram</a>
+            <a href="https://tiktok.com/@kiriacospsd" target="_blank" rel="noopener noreferrer" class="footer-nav-link">TikTok</a>
+            <a href="mailto:kiriacosvrasmatas@gmail.com" class="footer-nav-link">Email</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Kiriacos. All rights reserved.</p>
+        <p class="footer-made">Music graphic design · International</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/work.js" type="module"></script>
+</body>
+</html>

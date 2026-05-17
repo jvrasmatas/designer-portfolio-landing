@@ -91,12 +91,17 @@ Escala:
 - Frases de filosofía en bloque destacado (quote style)
 - CTA secundario: descarga CV o link a LinkedIn
 
-### 3. `#clientes` — Clientes *(antes "Portafolio")*
-- Lista curada de artistas con los que ha trabajado Kiriacos
-- No es un dump de todo su trabajo — muestra lo más destacado por artista
-- Cada entrada: nombre del artista, proyecto/colaboración destacada, disciplina (portada, branding, etc.)
-- Layout de lista editorial, no grid de cards — estética más de revista/industry
-- Énfasis en la calidad y el nombre del artista, no en la cantidad de proyectos
+### 3. `#projects` — Projects / Clients
+- Grid 3 columns × 2 rows = 6 artist cards
+- Each card: square photo. On hover → dark overlay + artist name + discipline slides up
+- Click on card → modal popup with all designs for that artist (2-col grid inside modal)
+- Below grid: "All my work" button → opens `work.html` in new tab
+
+### work.html — All My Work (separate page)
+- Same navbar/footer as index
+- Organized by artist/project sections
+- Each section: large artist name header + discipline tag + image grid (3-4 cols)
+- Mimics YouTube channel page with sections
 
 ### 4. `#contact` — Contacto
 - Headline directo: "¿Tienes un proyecto en mente?"
@@ -248,12 +253,16 @@ fix: mobile menu overlay z-index
 - El formulario de contacto usará un servicio estático (Formspree o EmailJS) — sin backend
 - Las imágenes de artistas son placeholder hasta que el cliente entregue assets reales
 
-### Pendiente del cliente
-- Lista real de artistas y proyectos destacados para la sección Clientes
-- Foto/imagen personal para la sección About
-- Bio personal definitiva
-- Links reales a redes sociales (Behance, Instagram, etc.)
-- Email de contacto real
+### Real contact info (confirmed)
+- **Email:** kiriacosvrasmatas@gmail.com
+- **Instagram:** @kiriacospsd
+- **TikTok:** @kiriacospsd
+
+### Pending from client
+- Real artist names and projects for the Clients grid (6 slots)
+- Real work images per artist for the modal and work.html
+- Personal photo for About section
+- Final personal bio
 
 ---
 
@@ -269,11 +278,12 @@ fix: mobile menu overlay z-index
 
 ## Changelog
 
-| Fecha | Versión | Cambios |
-|-------|---------|---------|
-| 2026-05-17 | v1.0 | Setup inicial, estructura base, landing completa con placeholder "Alex Morán" |
-| 2026-05-17 | v1.1 | Identidad real: Kiriacos. Tipografía → Helvetica. Paleta → negro/blanco/verde. Portafolio → Clientes (lista editorial) |
+| Date | Version | Changes |
+|------|---------|---------|
+| 2026-05-17 | v1.0 | Initial setup, base structure, full landing with placeholder "Alex Morán" |
+| 2026-05-17 | v1.1 | Real identity: Kiriacos. Font → Helvetica. Palette → black/white/green. Portfolio → Clients (editorial list) |
+| 2026-05-17 | v1.2 | Full English site. Navbar name larger. Hero → "Trust the process." Clients → 3×2 photo grid with hover overlay + modal per artist. "All my work" → separate work.html page (sections by artist + image grid). Real contact info added. |
 
 ---
 
-*Última actualización: 2026-05-17 v1.1 — Claude Code (diseñador senior)*
+*Last updated: 2026-05-17 v1.2 — Claude Code (senior designer)*

@@ -18,14 +18,14 @@ export function initContact() {
     // Success state
     submitBtn.classList.remove('loading');
     submitBtn.classList.add('success');
-    submitBtn.querySelector('.btn-text').textContent = '¡Mensaje enviado!';
+    submitBtn.querySelector('.btn-text').textContent = 'Message sent!';
     submitBtn.querySelector('svg').innerHTML = '<polyline points="20 6 9 17 4 12"/>';
 
     form.reset();
 
     setTimeout(() => {
       submitBtn.classList.remove('success');
-      submitBtn.querySelector('.btn-text').textContent = 'Enviar mensaje';
+      submitBtn.querySelector('.btn-text').textContent = 'Send message';
       submitBtn.querySelector('svg').innerHTML = '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>';
     }, 4000);
   });
@@ -57,9 +57,9 @@ function validateField(field) {
   let error = '';
 
   if (!field.value.trim()) {
-    error = 'Este campo es obligatorio.';
+    error = 'This field is required.';
   } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
-    error = 'Ingresa un email válido.';
+    error = 'Please enter a valid email.';
   }
 
   if (error) {

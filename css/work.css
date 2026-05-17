@@ -1,0 +1,200 @@
+/* ── work.html — All My Work page ── */
+
+.work-page-hero {
+  padding-top: calc(80px + var(--space-16));
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.work-page-hero .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.work-page-hero .back-link:hover {
+  color: var(--color-text);
+}
+
+.work-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.work-page-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 500px;
+}
+
+/* ── Artist sections ── */
+.work-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.work-section:last-child {
+  border-bottom: none;
+}
+
+.work-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.work-section-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.work-section-artist {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.work-section-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.work-section-count {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  letter-spacing: 0.08em;
+}
+
+/* ── Work image grid (YouTube-style) ── */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.work-thumb {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  aspect-ratio: 4/3;
+  cursor: none;
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-base) var(--ease-smooth);
+}
+
+.work-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.work-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background var(--duration-fast) var(--ease-smooth);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+}
+
+.work-thumb:hover .work-thumb-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.work-thumb-label {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color var(--duration-fast) var(--ease-smooth);
+  line-height: 1.3;
+}
+
+.work-thumb:hover .work-thumb-label {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Featured thumb (first of each section, larger) */
+.work-thumb.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: unset;
+}
+
+/* ── Page footer ── */
+.work-page-footer-cta {
+  padding-block: var(--space-20);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.work-page-footer-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.work-page-footer-cta p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .work-thumb.featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-thumb.featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-thumb.featured {
+    grid-column: span 1;
+  }
+}
