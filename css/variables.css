@@ -1,0 +1,75 @@
+:root {
+  /* Colors */
+  --color-bg: #0d0d0d;
+  --color-bg-card: #161616;
+  --color-bg-elevated: #1c1c1c;
+  --color-border: #222222;
+  --color-border-subtle: #1a1a1a;
+  --color-text: #f0f0f0;
+  --color-text-muted: #777777;
+  --color-text-dim: #444444;
+  --color-accent: #e8ff3b;
+  --color-accent-hover: #d4eb00;
+  --color-white: #ffffff;
+  --color-success: #4ade80;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-padding: clamp(1.5rem, 5vw, 4rem);
+  --section-padding: clamp(5rem, 10vw, 9rem);
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 200ms;
+  --duration-base: 350ms;
+  --duration-slow: 600ms;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 30px rgba(232, 255, 59, 0.15);
+
+  /* Z-index */
+  --z-base: 1;
+  --z-card: 10;
+  --z-navbar: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-cursor: 9999;
+}

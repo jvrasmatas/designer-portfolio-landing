@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Morán — Diseñador Gráfico</title>
+  <meta name="description" content="Diseñador gráfico especializado en branding, identidad visual y diseño editorial. Creando experiencias visuales memorables." />
+  <meta name="author" content="Alex Morán" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alex Morán — Diseñador Gráfico" />
+  <meta property="og:description" content="Branding, identidad visual y diseño editorial." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/sections/hero.css" />
+  <link rel="stylesheet" href="css/sections/about.css" />
+  <link rel="stylesheet" href="css/sections/portfolio.css" />
+  <link rel="stylesheet" href="css/sections/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <!-- Noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="#home" class="navbar-logo" aria-label="Alex Morán — Inicio">
+        Alex<span>.</span>
+      </a>
+
+      <nav class="navbar-links" aria-label="Navegación principal">
+        <a href="#home" class="navbar-link active">Home</a>
+        <a href="#about" class="navbar-link">Acerca</a>
+        <a href="#portfolio" class="navbar-link">Portafolio</a>
+        <a href="#contact" class="navbar-link">Contacto</a>
+      </nav>
+
+      <div class="navbar-cta">
+        <a href="#contact" class="btn btn-primary">Hablemos</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="#home" class="navbar-link">Home</a>
+    <a href="#about" class="navbar-link">Acerca</a>
+    <a href="#portfolio" class="navbar-link">Portafolio</a>
+    <a href="#contact" class="navbar-link">Contacto</a>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Inicio">
+      <div class="container hero-inner">
+
+        <!-- Meta row -->
+        <div class="hero-meta">
+          <div class="badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Disponible para proyectos
+          </div>
+          <span class="text-muted" style="font-size: var(--text-sm);">Buenos Aires, Argentina · 2026</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-headline" aria-label="Diseño que habla. Branding que permanece.">
+          <span class="hero-headline-line"><span>Diseño que</span></span>
+          <span class="hero-headline-line"><span class="outline">habla.</span></span>
+          <span class="hero-headline-line"><span>Branding</span></span>
+        </h1>
+
+        <!-- Bottom row -->
+        <div class="hero-bottom">
+          <div>
+            <p class="hero-description">
+              Transformo ideas en identidades visuales que conectan emocionalmente con las personas y diferencian marcas en mercados competitivos.
+            </p>
+            <div class="hero-actions" style="margin-top: var(--space-8);">
+              <a href="#portfolio" class="btn btn-primary">
+                Ver portafolio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">Hablar conmigo</a>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats" style="flex-direction: column; gap: var(--space-6); align-items: flex-end;">
+            <div class="stat" style="text-align: right;">
+              <span class="stat-number" data-count="80">0</span><span class="stat-number">+</span>
+              <span class="stat-label">Proyectos</span>
+            </div>
+            <div class="stat" style="text-align: right;">
+              <span class="stat-number" data-count="6">0</span>
+              <span class="stat-label">Años exp.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats row bottom -->
+        <div class="hero-stats reveal">
+          <div class="stat">
+            <div><span class="stat-number" data-count="48">0</span><span class="stat-number">+</span></div>
+            <span class="stat-label">Clientes satisfechos</span>
+          </div>
+          <div class="stat">
+            <div><span class="stat-number" data-count="12">0</span></div>
+            <span class="stat-label">Premios recibidos</span>
+          </div>
+          <div class="stat">
+            <div><span class="stat-number" data-count="100">0</span><span class="stat-number">%</span></div>
+            <span class="stat-label">Satisfacción cliente</span>
+          </div>
+          <div class="stat" style="margin-left: auto;">
+            <a href="#contact" class="btn btn-ghost">
+              Iniciar proyecto
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════ -->
+    <section class="section about" id="about" aria-label="Acerca de mí">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Left -->
+          <div class="about-content">
+            <div>
+              <p class="section-label">Acerca de mí</p>
+              <h2 class="section-heading reveal">
+                Creatividad con
+                <span class="text-accent">propósito.</span>
+              </h2>
+            </div>
+
+            <p class="about-description reveal reveal-delay-1">
+              Soy <strong>Alex Morán</strong>, diseñador gráfico con 6 años de experiencia creando identidades visuales que van más allá de lo estético. Me especializo en <strong>branding estratégico</strong>, diseño editorial y comunicación visual que genera resultados reales para marcas y empresas.
+            </p>
+
+            <div class="about-quote reveal reveal-delay-2">
+              <p>"El buen diseño no solo se ve bien — también resuelve problemas y cuenta historias."</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="reveal reveal-delay-3">
+              <p class="about-skills-heading">Especialidades</p>
+              <div class="skills-grid">
+                <span class="skill-pill">Branding &amp; Identidad</span>
+                <span class="skill-pill">Diseño Editorial</span>
+                <span class="skill-pill">Motion Graphics</span>
+                <span class="skill-pill">Packaging</span>
+                <span class="skill-pill">UI / Digital</span>
+                <span class="skill-pill">Tipografía</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="about-tools reveal reveal-delay-4">
+              <p class="about-skills-heading">Herramientas</p>
+              <div class="tools-row">
+                <span class="tool-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  Figma
+                </span>
+                <span class="tool-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                  Illustrator
+                </span>
+                <span class="tool-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                  Photoshop
+                </span>
+                <span class="tool-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  After Effects
+                </span>
+                <span class="tool-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+                  InDesign
+                </span>
+              </div>
+            </div>
+
+            <div class="about-cta-row reveal">
+              <a href="#portfolio" class="btn btn-primary">Ver mis proyectos</a>
+              <a href="#contact" class="btn btn-secondary">Descargar CV</a>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="about-visual reveal reveal-delay-1">
+            <div class="about-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
+                alt="Alex Morán — Diseñador Gráfico en su estudio"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-float-card">
+              <p class="about-float-card-label">Proyectos completados</p>
+              <p class="about-float-card-value">80+</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════
+         PORTFOLIO
+    ═══════════════════════════════════════ -->
+    <section class="section portfolio" id="portfolio" aria-label="Portafolio">
+      <div class="container">
+
+        <div class="portfolio-header">
+          <div>
+            <p class="section-label">Portafolio</p>
+            <h2 class="section-heading reveal">Proyectos<br><span class="text-accent">seleccionados.</span></h2>
+          </div>
+
+          <!-- Filters -->
+          <div class="portfolio-filters" role="group" aria-label="Filtrar proyectos">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="editorial">Editorial</button>
+            <button class="filter-btn" data-filter="digital">Digital</button>
+            <button class="filter-btn" data-filter="motion">Motion</button>
+          </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+
+          <!-- Card 1 — Large -->
+          <article class="portfolio-card large reveal" data-category="branding">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=800&q=80"
+                alt="Proyecto Lumina Branding"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Branding</span>
+                  <span class="tag">2025</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Lumina Studio</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Lumina Studio</p>
+                <p class="portfolio-card-year">Branding · 2025</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Lumina Studio">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portfolio-card reveal reveal-delay-1" data-category="editorial">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&q=80"
+                alt="Proyecto Forma Editorial"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Editorial</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Revista Forma</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Revista Forma</p>
+                <p class="portfolio-card-year">Editorial · 2025</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Revista Forma">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portfolio-card reveal reveal-delay-2" data-category="digital">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                alt="Proyecto Nova App"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Digital</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Nova App UI</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Nova App UI</p>
+                <p class="portfolio-card-year">Digital · 2024</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Nova App UI">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="portfolio-card reveal reveal-delay-1" data-category="branding">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=600&q=80"
+                alt="Proyecto Arca Branding"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Branding</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Arca Coffee</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Arca Coffee</p>
+                <p class="portfolio-card-year">Branding · 2024</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Arca Coffee">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="portfolio-card reveal reveal-delay-2" data-category="motion">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f664?w=600&q=80"
+                alt="Proyecto Pulse Motion"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Motion</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Pulse Reel</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Pulse Reel</p>
+                <p class="portfolio-card-year">Motion · 2024</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Pulse Reel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="portfolio-card reveal reveal-delay-3" data-category="editorial">
+            <div class="portfolio-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80"
+                alt="Proyecto Orbit Packaging"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card-overlay">
+              <div class="portfolio-card-info">
+                <div class="portfolio-card-meta">
+                  <span class="tag">Packaging</span>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text);">Orbit Packaging</h3>
+              </div>
+            </div>
+            <div class="portfolio-card-bottom">
+              <div>
+                <p class="portfolio-card-title">Orbit Packaging</p>
+                <p class="portfolio-card-year">Editorial · 2023</p>
+              </div>
+              <a href="#" class="portfolio-card-link" aria-label="Ver proyecto Orbit Packaging">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="portfolio-footer">
+          <a href="#contact" class="btn btn-secondary">
+            ¿Tienes un proyecto? Hablemos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════ -->
+    <section class="section contact" id="contact" aria-label="Contacto">
+      <div class="container">
+        <div class="contact-inner">
+
+          <!-- Left -->
+          <div class="contact-left">
+            <div>
+              <p class="section-label">Contacto</p>
+              <h2 class="section-heading reveal">
+                ¿Tienes un<br>proyecto en<br><span class="text-accent">mente?</span>
+              </h2>
+            </div>
+
+            <p class="contact-tagline reveal reveal-delay-1">
+              Me encantaría escuchar tu idea y ayudarte a darle vida a través del diseño. Respondo todos los mensajes en menos de 24 horas.
+            </p>
+
+            <div class="contact-details reveal reveal-delay-2">
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Email</span>
+                <a href="mailto:hola@alexmoran.design" class="contact-detail-value">hola@alexmoran.design</a>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Ubicación</span>
+                <span class="contact-detail-value">Buenos Aires, Argentina</span>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Disponibilidad</span>
+                <span class="contact-detail-value">Proyectos freelance — inmediata</span>
+              </div>
+            </div>
+
+            <div class="contact-socials reveal reveal-delay-3" aria-label="Redes sociales">
+              <a href="#" class="social-link" aria-label="Behance">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.836 1.882 1.993 1.882.954 0 1.538-.507 1.776-1.282l2.986.554zM15.998 13H19.41c-.045-1.361-.787-2.017-1.69-2.017-.973 0-1.608.696-1.723 2.017zm-12.012 0h3c0-1.838-1.108-2.5-1.5-2.5s-1.5.662-1.5 2.5zM3 7.5C3 5.015 5.015 3 7.5 3c2.484 0 4.5 2.015 4.5 4.5S9.984 12 7.5 12C5.015 12 3 9.985 3 7.5zm7 0C10 6.119 8.881 5 7.5 5S5 6.119 5 7.5 6.119 10 7.5 10 10 8.881 10 7.5z"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Dribbble">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+              </a>
+            </div>
+
+            <div class="availability-note reveal">
+              <div class="badge-dot" aria-hidden="true"></div>
+              <p><strong>Disponible ahora.</strong> Respondiendo consultas en menos de 24 horas.</p>
+            </div>
+          </div>
+
+          <!-- Right — Form -->
+          <div class="reveal reveal-delay-2">
+            <form class="contact-form-wrapper" id="contactForm" novalidate aria-label="Formulario de contacto">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Nombre</label>
+                  <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="projectType">Tipo de proyecto</label>
+                <select class="form-select" id="projectType" name="projectType" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="branding">Branding e identidad</option>
+                  <option value="editorial">Diseño editorial</option>
+                  <option value="digital">Diseño digital / UI</option>
+                  <option value="motion">Motion graphics</option>
+                  <option value="packaging">Packaging</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Mensaje</label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Cuéntame sobre tu proyecto, objetivos y cualquier detalle relevante..." required rows="5"></textarea>
+              </div>
+
+              <div class="form-submit">
+                <p class="form-note">* Todos los campos son obligatorios</p>
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                  <span class="btn-text">Enviar mensaje</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo" aria-label="Alex Morán — Inicio">Alex<span>.</span></a>
+          <p class="footer-tagline">Diseñador gráfico especializado en branding, identidad visual y comunicación creativa.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegación del footer">
+          <div class="footer-nav-group">
+            <p class="footer-nav-heading">Navegación</p>
+            <a href="#home" class="footer-nav-link">Home</a>
+            <a href="#about" class="footer-nav-link">Acerca</a>
+            <a href="#portfolio" class="footer-nav-link">Portafolio</a>
+            <a href="#contact" class="footer-nav-link">Contacto</a>
+          </div>
+          <div class="footer-nav-group">
+            <p class="footer-nav-heading">Servicios</p>
+            <a href="#contact" class="footer-nav-link">Branding</a>
+            <a href="#contact" class="footer-nav-link">Editorial</a>
+            <a href="#contact" class="footer-nav-link">Motion</a>
+            <a href="#contact" class="footer-nav-link">Packaging</a>
+          </div>
+          <div class="footer-nav-group">
+            <p class="footer-nav-heading">Social</p>
+            <a href="#" class="footer-nav-link">Behance</a>
+            <a href="#" class="footer-nav-link">Instagram</a>
+            <a href="#" class="footer-nav-link">LinkedIn</a>
+            <a href="#" class="footer-nav-link">Dribbble</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Alex Morán. Todos los derechos reservados.</p>
+        <p class="footer-made">Diseñado con <span class="heart" aria-label="amor">♥</span> en Buenos Aires</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
