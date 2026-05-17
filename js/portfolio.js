@@ -2,58 +2,191 @@ import { artists } from './data/artists.js';
 import { bindLightboxTriggers } from './lightbox.js';
 
 export function initPortfolio() {
-  buildClientGrid();
+  buildCarousel();
   buildModal();
 }
 
-// ── Build the 3×2 client grid ──
-function buildClientGrid() {
-  const grid = document.getElementById('clientsGrid');
-  if (!grid) return;
+// ─── State ───────────────────────────────────────────────────────────────────
+let activeIndex = 0;
+let isAnimating = false;
+let isMobile = window.innerWidth < 640;
 
+window.addEventListener('resize', () => {
+  isMobile = window.innerWidth < 640;
+  applyRoles();
+}, { passive: true });
+
+// ─── DOM refs ─────────────────────────────────────────────────────────────────
+let cards = [];
+let ghostText, carouselName, carouselDiscipline, carouselIndex, carouselCta;
+
+// ─── Build carousel ───────────────────────────────────────────────────────────
+function buildCarousel() {
+  const stage = document.getElementById('carouselStage');
+  ghostText        = document.getElementById('carouselGhostText');
+  carouselName     = document.getElementById('carouselName');
+  carouselDiscipline = document.getElementById('carouselDiscipline');
+  carouselIndex    = document.getElementById('carouselIndex');
+  carouselCta      = document.getElementById('carouselCta');
+
+  if (!stage) return;
+
+  // Preload all images
+  artists.forEach(a => { const img = new Image(); img.src = a.cover; });
+
+  // Create one card per artist
   artists.forEach((artist, i) => {
     const card = document.createElement('div');
-    card.className = 'client-card reveal';
-    if (i > 0) card.classList.add(`reveal-delay-${Math.min(i, 4)}`);
-    card.dataset.artistId = artist.id;
-
+    card.className = 'carousel-card';
+    card.dataset.index = String(i);
     card.innerHTML = `
-      <img class="client-card-img" src="${artist.cover}" alt="${artist.name}" loading="lazy" />
-      <div class="client-card-overlay">
-        <div class="client-card-info">
-          <p class="client-card-name">${artist.name}</p>
-          <p class="client-card-discipline">${artist.discipline}</p>
-        </div>
-      </div>
-      <div class="client-card-cta" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-        </svg>
+      <img src="${artist.cover}" alt="${artist.name}" draggable="false" />
+      <div class="carousel-card-overlay">
+        <span class="carousel-card-overlay-label">View work</span>
       </div>
     `;
 
-    card.addEventListener('click', () => openModal(artist));
-    grid.appendChild(card);
+    // Only the center card opens the modal
+    card.addEventListener('click', () => {
+      if (parseInt(card.dataset.index) === activeIndex && !isAnimating) {
+        openModal(artist);
+      }
+    });
+
+    stage.appendChild(card);
+    cards.push(card);
+  });
+
+  // Arrow buttons
+  document.getElementById('carouselPrev')?.addEventListener('click', () => navigate('prev'));
+  document.getElementById('carouselNext')?.addEventListener('click', () => navigate('next'));
+
+  // "View work" CTA also opens modal
+  carouselCta?.addEventListener('click', e => {
+    e.preventDefault();
+    if (!isAnimating) openModal(artists[activeIndex]);
+  });
+
+  // Keyboard arrows
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  navigate('prev');
+    if (e.key === 'ArrowRight') navigate('next');
+  });
+
+  updateUI(false);
+  applyRoles();
+}
+
+// ─── Navigate ─────────────────────────────────────────────────────────────────
+function navigate(direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  // Fade ghost text out briefly
+  if (ghostText) ghostText.style.opacity = '0';
+  if (carouselName) carouselName.style.opacity = '0';
+  if (carouselDiscipline) carouselDiscipline.style.opacity = '0';
+
+  const n = artists.length;
+  activeIndex = direction === 'next'
+    ? (activeIndex + 1) % n
+    : (activeIndex + n - 1) % n;
+
+  applyRoles();
+
+  // Fade text back in after brief pause
+  setTimeout(() => {
+    updateUI(true);
+  }, 220);
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 650);
+}
+
+// ─── Roles ────────────────────────────────────────────────────────────────────
+// 6 artists mapped to: center, right1, right2, back, left2, left1
+const ROLE_ORDER = ['center', 'right1', 'right2', 'back', 'left2', 'left1'];
+
+function applyRoles() {
+  const n = artists.length;
+  cards.forEach((card, i) => {
+    const offset = (i - activeIndex + n) % n;
+    const role = ROLE_ORDER[offset];
+    card.dataset.role = role;
+    Object.assign(card.style, getStyle(role));
   });
 }
 
-// ── Modal ──
+// ─── Per-role styles ─────────────────────────────────────────────────────────
+const TRANSITION = [
+  'transform 650ms cubic-bezier(0.4,0,0.2,1)',
+  'filter 650ms cubic-bezier(0.4,0,0.2,1)',
+  'opacity 650ms cubic-bezier(0.4,0,0.2,1)',
+  'left 650ms cubic-bezier(0.4,0,0.2,1)',
+  'height 650ms cubic-bezier(0.4,0,0.2,1)',
+  'bottom 650ms cubic-bezier(0.4,0,0.2,1)',
+].join(', ');
+
+const DESKTOP = {
+  center: { left:'50%', height:'78%', bottom:'0',   transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
+  left1:  { left:'30%', height:'44%', bottom:'6%',  transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.8',  zIndex:'10' },
+  right1: { left:'70%', height:'44%', bottom:'6%',  transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.8',  zIndex:'10' },
+  left2:  { left:'14%', height:'26%', bottom:'10%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.45', zIndex:'5'  },
+  right2: { left:'86%', height:'26%', bottom:'10%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.45', zIndex:'5'  },
+  back:   { left:'50%', height:'14%', bottom:'14%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
+};
+
+const MOBILE = {
+  center: { left:'50%', height:'52%', bottom:'16%', transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
+  left1:  { left:'18%', height:'22%', bottom:'26%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  right1: { left:'82%', height:'22%', bottom:'26%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  left2:  { left:'-4%', height:'13%', bottom:'30%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  right2: { left:'104%',height:'13%', bottom:'30%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  back:   { left:'50%', height:'8%',  bottom:'34%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
+};
+
+function getStyle(role) {
+  const map = isMobile ? MOBILE : DESKTOP;
+  return { ...map[role] || map.back, transition: TRANSITION, position: 'absolute', aspectRatio: '3/4' };
+}
+
+// ─── Update text UI ───────────────────────────────────────────────────────────
+function updateUI(animate) {
+  const artist = artists[activeIndex];
+  const n = artists.length;
+  const indexStr = `${String(activeIndex + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
+
+  if (ghostText) {
+    ghostText.textContent = artist.name;
+    ghostText.style.opacity = '0.055';
+  }
+  if (carouselName) {
+    carouselName.textContent = artist.name;
+    if (animate) carouselName.style.opacity = '1';
+  }
+  if (carouselDiscipline) {
+    carouselDiscipline.textContent = artist.discipline;
+    if (animate) carouselDiscipline.style.opacity = '1';
+  }
+  if (carouselIndex) carouselIndex.textContent = indexStr;
+}
+
+// ─── Modal ────────────────────────────────────────────────────────────────────
 let modalBackdrop, modalArtistName, modalArtistDiscipline, modalGrid;
 
 function buildModal() {
-  modalBackdrop = document.getElementById('modalBackdrop');
-  modalArtistName = document.getElementById('modalArtistName');
+  modalBackdrop        = document.getElementById('modalBackdrop');
+  modalArtistName      = document.getElementById('modalArtistName');
   modalArtistDiscipline = document.getElementById('modalArtistDiscipline');
-  modalGrid = document.getElementById('modalGrid');
+  modalGrid            = document.getElementById('modalGrid');
 
   if (!modalBackdrop) return;
 
-  // Close on backdrop click
   modalBackdrop.addEventListener('click', e => {
     if (e.target === modalBackdrop) closeModal();
   });
 
-  // Close on Escape
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
   });
@@ -64,10 +197,9 @@ function buildModal() {
 function openModal(artist) {
   if (!modalBackdrop) return;
 
-  modalArtistName.textContent = artist.name;
+  modalArtistName.textContent       = artist.name;
   modalArtistDiscipline.textContent = artist.discipline;
 
-  // Build works grid
   modalGrid.innerHTML = artist.works.map(work => `
     <div class="modal-work-item"
          data-lightbox-src="${work.image}"
@@ -77,7 +209,6 @@ function openModal(artist) {
     </div>
   `).join('');
 
-  // Bind lightbox on freshly rendered items
   bindLightboxTriggers(modalGrid);
 
   modalBackdrop.classList.add('open');

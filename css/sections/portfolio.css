@@ -1,6 +1,11 @@
-/* ── Projects / Clients section ── */
+/* ── Projects section ── */
 .projects {
   background: var(--color-bg);
+  padding-top: var(--section-padding);
+}
+
+.projects-header-wrap {
+  margin-bottom: var(--space-10);
 }
 
 .projects-header {
@@ -8,122 +13,232 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-8);
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
   flex-wrap: wrap;
 }
 
-/* ── 3×2 Client grid ── */
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3);
-}
-
-/* ── Client card ── */
-.client-card {
+/* ── Carousel container ── */
+.clients-carousel {
   position: relative;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 82vh;
+  min-height: 520px;
   overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--color-bg-card);
-  cursor: none;
 }
 
-.client-card-img {
+/* ── Giant ghost text (artist name) ── */
+.carousel-ghost-text {
+  position: absolute;
+  inset-x: 0;
+  top: 42%;
+  transform: translateY(-50%);
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: clamp(72px, 19vw, 290px);
+  font-weight: 900;
+  color: var(--color-white);
+  opacity: 0.055;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
+}
+
+/* ── Card stage ── */
+.carousel-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+/* ── Each card ── */
+.carousel-card {
+  position: absolute;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  transition:
+    transform 650ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter 650ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 650ms cubic-bezier(0.4, 0, 0.2, 1),
+    left 650ms cubic-bezier(0.4, 0, 0.2, 1),
+    height 650ms cubic-bezier(0.4, 0, 0.2, 1),
+    bottom 650ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter, opacity;
+}
+
+.carousel-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+  user-select: none;
   display: block;
-  transition: transform var(--duration-slow) var(--ease-smooth);
 }
 
-.client-card:hover .client-card-img {
-  transform: scale(1.06);
-}
-
-/* Hover overlay */
-.client-card-overlay {
+/* Hover overlay — only shows on center card */
+.carousel-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%);
   opacity: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
   padding: var(--space-5);
-  transition: opacity var(--duration-base) var(--ease-smooth);
+  transition: opacity 250ms ease;
 }
 
-.client-card:hover .client-card-overlay {
+.carousel-card[data-role="center"] .carousel-card-overlay {
+  cursor: pointer;
+}
+
+.carousel-card[data-role="center"]:hover .carousel-card-overlay {
   opacity: 1;
 }
 
-.client-card-info {
-  transform: translateY(10px);
-  transition: transform var(--duration-base) var(--ease-smooth);
-}
-
-.client-card:hover .client-card-info {
-  transform: translateY(0);
-}
-
-.client-card-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  font-weight: 700;
-  color: var(--color-white);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: var(--space-1);
-}
-
-.client-card-discipline {
+.carousel-card-overlay-label {
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.08em;
+  font-weight: 600;
   text-transform: uppercase;
-  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--color-white);
 }
 
-/* View indicator */
-.client-card-cta {
+/* ── Bottom UI ── */
+.carousel-bottom-ui {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  width: 36px;
-  height: 36px;
+  bottom: var(--space-8);
+  left: 0;
+  right: 0;
+  padding-inline: clamp(1.5rem, 6vw, 5rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* Left block */
+.carousel-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  pointer-events: all;
+}
+
+.carousel-index {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.carousel-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.1;
+  transition: opacity 250ms ease;
+}
+
+.carousel-discipline {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  transition: opacity 250ms ease;
+}
+
+/* Nav buttons */
+.carousel-nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.carousel-btn {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+/* Right CTA */
+.carousel-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-white);
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity var(--duration-base) var(--ease-smooth),
-              transform var(--duration-base) var(--ease-spring);
+  opacity: 0.45;
+  text-transform: uppercase;
+  pointer-events: all;
+  text-decoration: none;
+  transition: opacity 200ms ease, color 200ms ease;
+  white-space: nowrap;
+  line-height: 1;
 }
 
-.client-card:hover .client-card-cta {
+.carousel-cta:hover {
   opacity: 1;
-  transform: scale(1);
+  color: var(--color-accent);
 }
 
-/* ── "All my work" footer ── */
+/* ── Footer CTA ── */
 .projects-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding-top: var(--space-10);
+  padding-block: var(--space-10);
   border-top: 1px solid var(--color-border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .clients-carousel {
+    height: 72vh;
+    min-height: 420px;
+  }
+
+  .carousel-ghost-text {
+    font-size: clamp(48px, 22vw, 100px);
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .carousel-cta {
+    display: none;
+  }
 }
 
 /* ── Modal ── */
@@ -165,7 +280,6 @@
   transform: translateY(0) scale(1);
 }
 
-/* Modal header */
 .modal-header {
   display: flex;
   align-items: center;
@@ -214,14 +328,12 @@
   background: var(--color-bg-elevated);
 }
 
-/* Modal body */
 .modal-body {
   overflow-y: auto;
   padding: var(--space-5);
   flex: 1;
 }
 
-/* Modal works grid */
 .modal-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -234,6 +346,7 @@
   overflow: hidden;
   background: var(--color-bg-elevated);
   aspect-ratio: 4/3;
+  cursor: zoom-in;
 }
 
 .modal-work-item img {
@@ -261,24 +374,8 @@
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .modal {
-    max-height: 90vh;
-    border-radius: var(--radius-md);
-  }
-
+@media (max-width: 560px) {
   .modal-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .clients-grid {
     grid-template-columns: 1fr;
   }
 

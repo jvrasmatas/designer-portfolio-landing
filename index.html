@@ -243,9 +243,10 @@
     <!-- ═══════════════════════════════════════
          PROJECTS / CLIENTS
     ═══════════════════════════════════════ -->
-    <section class="section projects" id="projects" aria-label="Projects">
-      <div class="container">
+    <section class="projects" id="projects" aria-label="Projects">
 
+      <!-- Section header inside container -->
+      <div class="container projects-header-wrap">
         <div class="projects-header">
           <div>
             <p class="section-label">Projects</p>
@@ -254,22 +255,54 @@
             </h2>
           </div>
           <p class="text-muted reveal" style="font-size:var(--text-sm); max-width:260px; text-align:right; line-height:1.6;">
-            Click on any artist to see all the designs created for them.
+            Select an artist to explore all the work created for them.
           </p>
         </div>
+      </div>
 
-        <!-- 3×2 grid — built by JS -->
-        <div class="clients-grid" id="clientsGrid" role="list" aria-label="Client list"></div>
+      <!-- Full-width carousel -->
+      <div class="clients-carousel" id="clientsCarousel">
 
-        <!-- All my work CTA -->
-        <div class="projects-footer">
-          <a href="work.html" class="btn btn-secondary" style="gap: var(--space-3); font-size: var(--text-base); padding: var(--space-4) var(--space-8);">
-            All my work
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        <!-- Giant ghost artist name -->
+        <div class="carousel-ghost-text" id="carouselGhostText" aria-hidden="true"></div>
+
+        <!-- Cards stage -->
+        <div class="carousel-stage" id="carouselStage"></div>
+
+        <!-- Bottom UI -->
+        <div class="carousel-bottom-ui">
+          <div class="carousel-info">
+            <p class="carousel-index" id="carouselIndex">01 / 06</p>
+            <p class="carousel-name" id="carouselName"></p>
+            <p class="carousel-discipline" id="carouselDiscipline"></p>
+            <div class="carousel-nav">
+              <button class="carousel-btn" id="carouselPrev" aria-label="Previous artist">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              </button>
+              <button class="carousel-btn" id="carouselNext" aria-label="Next artist">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <a class="carousel-cta" id="carouselCta" href="#" aria-label="View artist work">
+            View work
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
         </div>
 
       </div>
+
+      <!-- All my work footer -->
+      <div class="container">
+        <div class="projects-footer">
+          <a href="work.html" class="btn btn-secondary" style="gap:var(--space-3); font-size:var(--text-base); padding:var(--space-4) var(--space-8);">
+            All my work
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
     </section>
 
     <div class="divider"></div>
