@@ -3,19 +3,20 @@
   --color-bg: #0d0d0d;
   --color-bg-card: #161616;
   --color-bg-elevated: #1c1c1c;
-  --color-border: #222222;
-  --color-border-subtle: #1a1a1a;
-  --color-text: #f0f0f0;
-  --color-text-muted: #777777;
+  --color-border: #2a2a2a;
+  --color-border-subtle: #1e1e1e;
+  --color-text: #ffffff;
+  --color-text-muted: #888888;
   --color-text-dim: #444444;
-  --color-accent: #e8ff3b;
-  --color-accent-hover: #d4eb00;
+  --color-accent: #25632E;
+  --color-accent-hover: #1d4f24;
+  --color-accent-light: #2e7a39;
   --color-white: #ffffff;
-  --color-success: #4ade80;
+  --color-success: #25632E;
 
-  /* Typography */
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  /* Typography — Helvetica system stack, no external font dependency */
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* Font sizes */
   --text-xs: 0.75rem;
@@ -63,7 +64,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 0 30px rgba(232, 255, 59, 0.15);
+  --shadow-accent: 0 0 30px rgba(37, 99, 46, 0.25);
 
   /* Z-index */
   --z-base: 1;

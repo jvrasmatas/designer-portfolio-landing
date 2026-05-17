@@ -4,7 +4,7 @@ export function initNavbar() {
   const mobileMenu = document.getElementById('mobileMenu');
   const navLinks = document.querySelectorAll('.navbar-link');
   const mobileLinks = mobileMenu.querySelectorAll('.navbar-link');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('section[id], .clients[id]');
 
   // Scroll behavior
   const onScroll = () => {

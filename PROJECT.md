@@ -1,8 +1,10 @@
-# Landing Page — Diseñador Gráfico
+# Landing Page — Kiriacos / Diseñador Gráfico Musical
 
 ## Visión General
 
-Landing page profesional para un diseñador gráfico independiente. El objetivo es transmitir personalidad creativa, generar confianza y convertir visitantes en clientes potenciales a través de un diseño elegante, minimalista y con alta carga visual.
+Landing page profesional para **Kiriacos**, diseñador gráfico freelancer especializado en **diseño musical** — identidad visual para artistas, portadas, material promocional y branding para la industria de la música. Ha trabajado con artistas internacionales.
+
+El objetivo es transmitir credibilidad en la industria musical, mostrar su trabajo con artistas relevantes y convertir visitas en nuevos clientes del sector.
 
 **Inspiración principal:** [Fabrica® Studio](https://fabrica.framer.media/studio) — diseño limpio, tipografía bold, dark theme minimalista, estructurado y directo al grano.
 
@@ -36,16 +38,19 @@ Landing page profesional para un diseñador gráfico independiente. El objetivo 
 --color-bg:         #0d0d0d   /* Negro profundo — fondo principal */
 --color-bg-card:    #161616   /* Cards y superficies elevadas */
 --color-border:     #222222   /* Bordes sutiles */
---color-text:       #f0f0f0   /* Texto primario */
---color-text-muted: #777777   /* Texto secundario / labels */
---color-accent:     #e8ff3b   /* Amarillo eléctrico — CTA y acentos */
+--color-text:       #ffffff   /* Texto primario — blanco puro */
+--color-text-muted: #888888   /* Texto secundario / labels */
+--color-accent:     #25632E   /* Verde — color de acento y CTA */
+--color-accent-hover: #1d4f24 /* Verde oscuro — hover */
 --color-accent-alt: #ffffff   /* Blanco para contraste */
 ```
 
+> Paleta definida por el cliente: **negro + blanco + verde #25632E**. Sin amarillos ni colores previos.
+
 ### Tipografía
 ```
---font-display: 'Syne', sans-serif        /* Headlines bold, carácter fuerte */
---font-body:    'Inter', sans-serif       /* Cuerpo legible y neutro */
+--font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif   /* Todo el sitio */
+--font-body:    'Helvetica Neue', Helvetica, Arial, sans-serif   /* Sin Google Fonts */
 
 Escala:
   - Hero heading:   clamp(4rem, 10vw, 9rem) — impacto visual
@@ -54,6 +59,8 @@ Escala:
   - Body:           1rem / line-height 1.6
   - Labels/caps:    0.75rem uppercase letter-spacing 0.15em
 ```
+
+> Tipografía: **Helvetica Neue** en todo el sitio. Sin importar Google Fonts.
 
 ### Efectos Visuales
 - Textura de grano sutil en el hero (CSS noise filter o SVG filter)
@@ -84,13 +91,12 @@ Escala:
 - Frases de filosofía en bloque destacado (quote style)
 - CTA secundario: descarga CV o link a LinkedIn
 
-### 3. `#portfolio` — Portafolio
-- Grid 2-3 columnas responsive
-- Filtro por categoría: Branding / Editorial / Digital / Motion
-- Cards con: imagen de proyecto, nombre, categoría, año
-- Hover: overlay oscuro + título aparece + flecha de enlace
-- Click: modal o redirección a página de proyecto (placeholder de momento)
-- 6-8 proyectos de ejemplo (con imágenes placeholder de calidad)
+### 3. `#clientes` — Clientes *(antes "Portafolio")*
+- Lista curada de artistas con los que ha trabajado Kiriacos
+- No es un dump de todo su trabajo — muestra lo más destacado por artista
+- Cada entrada: nombre del artista, proyecto/colaboración destacada, disciplina (portada, branding, etc.)
+- Layout de lista editorial, no grid de cards — estética más de revista/industry
+- Énfasis en la calidad y el nombre del artista, no en la cantidad de proyectos
 
 ### 4. `#contact` — Contacto
 - Headline directo: "¿Tienes un proyecto en mente?"
@@ -229,21 +235,45 @@ fix: mobile menu overlay z-index
 
 ## Notas del Cliente / Decisiones de Diseño
 
-- El diseñador gráfico aún no proporcionó su nombre, bio, ni proyectos reales → se usan placeholders
-- Las imágenes de portafolio serán de alta calidad (Unsplash/placeholder) hasta que el cliente entregue assets
-- El formulario de contacto usará un servicio estático (Formspree o EmailJS) ya que no hay backend
-- Posibilidad futura: agregar sección de testimonios y blog
+### Cliente
+- **Nombre:** Kiriacos
+- **Especialidad:** Diseño gráfico musical — portadas, branding para artistas, material promocional
+- **Perfil:** Freelancer con trayectoria internacional
+- **Artistas reales:** Pendiente que el cliente entregue la lista de artistas y proyectos destacados
+
+### Decisiones confirmadas
+- **Tipografía:** Helvetica Neue exclusivamente — sin Google Fonts
+- **Paleta:** Negro (#0d0d0d) + Blanco (#ffffff) + Verde (#25632E)
+- **Sección Portafolio → Clientes:** lista editorial de artistas, no grid de trabajos
+- El formulario de contacto usará un servicio estático (Formspree o EmailJS) — sin backend
+- Las imágenes de artistas son placeholder hasta que el cliente entregue assets reales
+
+### Pendiente del cliente
+- Lista real de artistas y proyectos destacados para la sección Clientes
+- Foto/imagen personal para la sección About
+- Bio personal definitiva
+- Links reales a redes sociales (Behance, Instagram, etc.)
+- Email de contacto real
 
 ---
 
 ## Recursos y Referencias
 
 - **Inspiración:** https://fabrica.framer.media/studio
-- **Fuentes:** https://fonts.google.com (Inter + Syne)
-- **Íconos:** https://lucide.dev
+- **Tipografía:** Helvetica Neue (sistema) — sin dependencia externa
+- **Íconos:** SVG inline — sin librerías externas
 - **Placeholders imágenes:** https://unsplash.com
 - **Convención commits:** https://www.conventionalcommits.org
 
 ---
 
-*Última actualización: 2026-05-17 — Claude Code (diseñador senior)*
+## Changelog
+
+| Fecha | Versión | Cambios |
+|-------|---------|---------|
+| 2026-05-17 | v1.0 | Setup inicial, estructura base, landing completa con placeholder "Alex Morán" |
+| 2026-05-17 | v1.1 | Identidad real: Kiriacos. Tipografía → Helvetica. Paleta → negro/blanco/verde. Portafolio → Clientes (lista editorial) |
+
+---
+
+*Última actualización: 2026-05-17 v1.1 — Claude Code (diseñador senior)*
