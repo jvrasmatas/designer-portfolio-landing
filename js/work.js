@@ -1,10 +1,12 @@
 import { artists } from './data/artists.js';
 import { initNavbar } from './navbar.js';
 import { initAnimations } from './animations.js';
+import { initLightbox, bindLightboxTriggers } from './lightbox.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initAnimations();
+  initLightbox();
   buildWorkSections();
 });
 
@@ -32,7 +34,10 @@ function buildWorkSections() {
 
     // Works grid — first item is featured (larger)
     const worksHTML = artist.works.map((work, i) => `
-      <div class="work-thumb${i === 0 ? ' featured' : ''}" role="img" aria-label="${work.title}">
+      <div class="work-thumb${i === 0 ? ' featured' : ''}"
+           role="img" aria-label="${work.title}"
+           data-lightbox-src="${work.image}"
+           data-lightbox-alt="${work.title}">
         <img src="${work.image}" alt="${work.title}" loading="lazy" />
         <div class="work-thumb-overlay">
           <span class="work-thumb-label">${work.title}<br>${work.type} · ${work.year}</span>
@@ -42,5 +47,6 @@ function buildWorkSections() {
 
     section.innerHTML = header + `<div class="work-grid">${worksHTML}</div>`;
     container.appendChild(section);
+    bindLightboxTriggers(section);
   });
 }

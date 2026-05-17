@@ -1,4 +1,5 @@
 import { artists } from './data/artists.js';
+import { bindLightboxTriggers } from './lightbox.js';
 
 export function initPortfolio() {
   buildClientGrid();
@@ -68,11 +69,16 @@ function openModal(artist) {
 
   // Build works grid
   modalGrid.innerHTML = artist.works.map(work => `
-    <div class="modal-work-item">
+    <div class="modal-work-item"
+         data-lightbox-src="${work.image}"
+         data-lightbox-alt="${work.title}">
       <img src="${work.image}" alt="${work.title}" loading="lazy" />
       <div class="modal-work-label">${work.title} · ${work.year}</div>
     </div>
   `).join('');
+
+  // Bind lightbox on freshly rendered items
+  bindLightboxTriggers(modalGrid);
 
   modalBackdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
