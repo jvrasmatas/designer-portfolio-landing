@@ -269,22 +269,20 @@
         <!-- Cards stage -->
         <div class="carousel-stage" id="carouselStage"></div>
 
-        <!-- Bottom UI -->
+        <!-- Side arrows -->
+        <button class="carousel-btn carousel-btn--left" id="carouselPrev" aria-label="Previous artist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <button class="carousel-btn carousel-btn--right" id="carouselNext" aria-label="Next artist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+
+        <!-- Bottom UI — name + discipline + view work -->
         <div class="carousel-bottom-ui">
           <div class="carousel-info">
-            <p class="carousel-index" id="carouselIndex">01 / 06</p>
             <p class="carousel-name" id="carouselName"></p>
             <p class="carousel-discipline" id="carouselDiscipline"></p>
-            <div class="carousel-nav">
-              <button class="carousel-btn" id="carouselPrev" aria-label="Previous artist">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-              </button>
-              <button class="carousel-btn" id="carouselNext" aria-label="Next artist">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </button>
-            </div>
           </div>
-
           <a class="carousel-cta" id="carouselCta" href="#" aria-label="View artist work">
             View work
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>

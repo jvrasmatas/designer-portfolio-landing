@@ -18,16 +18,15 @@ window.addEventListener('resize', () => {
 
 // ─── DOM refs ─────────────────────────────────────────────────────────────────
 let cards = [];
-let ghostText, carouselName, carouselDiscipline, carouselIndex, carouselCta;
+let ghostText, carouselName, carouselDiscipline, carouselCta;
 
 // ─── Build carousel ───────────────────────────────────────────────────────────
 function buildCarousel() {
   const stage = document.getElementById('carouselStage');
-  ghostText        = document.getElementById('carouselGhostText');
-  carouselName     = document.getElementById('carouselName');
+  ghostText          = document.getElementById('carouselGhostText');
+  carouselName       = document.getElementById('carouselName');
   carouselDiscipline = document.getElementById('carouselDiscipline');
-  carouselIndex    = document.getElementById('carouselIndex');
-  carouselCta      = document.getElementById('carouselCta');
+  carouselCta        = document.getElementById('carouselCta');
 
   if (!stage) return;
 
@@ -148,14 +147,12 @@ const MOBILE = {
 
 function getStyle(role) {
   const map = isMobile ? MOBILE : DESKTOP;
-  return { ...map[role] || map.back, transition: TRANSITION, position: 'absolute', aspectRatio: '3/4' };
+  return { ...map[role] || map.back, transition: TRANSITION, position: 'absolute', aspectRatio: '1/1' };
 }
 
 // ─── Update text UI ───────────────────────────────────────────────────────────
 function updateUI(animate) {
   const artist = artists[activeIndex];
-  const n = artists.length;
-  const indexStr = `${String(activeIndex + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
 
   if (ghostText) {
     ghostText.textContent = artist.name;
@@ -169,7 +166,6 @@ function updateUI(animate) {
     carouselDiscipline.textContent = artist.discipline;
     if (animate) carouselDiscipline.style.opacity = '1';
   }
-  if (carouselIndex) carouselIndex.textContent = indexStr;
 }
 
 // ─── Modal ────────────────────────────────────────────────────────────────────

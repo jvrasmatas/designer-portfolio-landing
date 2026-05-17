@@ -95,7 +95,7 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-bg-card);
-  aspect-ratio: 4/3;
+  aspect-ratio: 1 / 1;
   cursor: none;
 }
 
@@ -142,7 +142,6 @@
 .work-thumb.featured {
   grid-column: span 2;
   grid-row: span 2;
-  aspect-ratio: unset;
 }
 
 /* ── Page footer ── */
