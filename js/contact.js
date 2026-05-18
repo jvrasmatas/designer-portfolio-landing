@@ -10,24 +10,37 @@ export function initContact() {
 
     // Loading state
     submitBtn.classList.add('loading');
-    submitBtn.querySelector('.btn-text').textContent = 'Enviando...';
+    submitBtn.querySelector('.btn-text').textContent = 'Sending...';
 
-    // Simulate send (replace with Formspree/EmailJS endpoint)
-    await new Promise(resolve => setTimeout(resolve, 1800));
+    try {
+      const res = await fetch('https://formspree.io/f/xpqnzdvy', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
 
-    // Success state
-    submitBtn.classList.remove('loading');
-    submitBtn.classList.add('success');
-    submitBtn.querySelector('.btn-text').textContent = 'Message sent!';
-    submitBtn.querySelector('svg').innerHTML = '<polyline points="20 6 9 17 4 12"/>';
+      if (!res.ok) throw new Error('Network error');
 
-    form.reset();
+      // Success
+      submitBtn.classList.remove('loading');
+      submitBtn.classList.add('success');
+      submitBtn.querySelector('.btn-text').textContent = 'Message sent!';
+      submitBtn.querySelector('svg').innerHTML = '<polyline points="20 6 9 17 4 12"/>';
+      form.reset();
 
-    setTimeout(() => {
-      submitBtn.classList.remove('success');
-      submitBtn.querySelector('.btn-text').textContent = 'Send message';
-      submitBtn.querySelector('svg').innerHTML = '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>';
-    }, 4000);
+      setTimeout(() => {
+        submitBtn.classList.remove('success');
+        submitBtn.querySelector('.btn-text').textContent = 'Send message';
+        submitBtn.querySelector('svg').innerHTML = '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>';
+      }, 4000);
+
+    } catch {
+      submitBtn.classList.remove('loading');
+      submitBtn.querySelector('.btn-text').textContent = 'Error — try again';
+      setTimeout(() => {
+        submitBtn.querySelector('.btn-text').textContent = 'Send message';
+      }, 3000);
+    }
   });
 
   // Real-time validation
