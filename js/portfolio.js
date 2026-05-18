@@ -137,12 +137,12 @@ const DESKTOP = {
 };
 
 const MOBILE = {
-  center: { left:'50%', height:'52%', bottom:'16%', transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
-  left1:  { left:'18%', height:'22%', bottom:'26%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
-  right1: { left:'82%', height:'22%', bottom:'26%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
-  left2:  { left:'-4%', height:'13%', bottom:'30%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
-  right2: { left:'104%',height:'13%', bottom:'30%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
-  back:   { left:'50%', height:'8%',  bottom:'34%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
+  center: { left:'50%', height:'62%', bottom:'4%',  transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
+  left1:  { left:'18%', height:'26%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  right1: { left:'82%', height:'26%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  left2:  { left:'-4%', height:'14%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  right2: { left:'104%',height:'14%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  back:   { left:'50%', height:'8%',  bottom:'20%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
 };
 
 function getStyle(role) {

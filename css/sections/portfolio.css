@@ -5,7 +5,7 @@
 }
 
 .projects-header-wrap {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-6);
 }
 
 .projects-header {
@@ -217,12 +217,13 @@
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .clients-carousel {
-    height: 72vh;
-    min-height: 420px;
+    height: 58vh;
+    min-height: 340px;
   }
 
   .carousel-ghost-text {
-    font-size: clamp(48px, 22vw, 100px);
+    font-size: clamp(40px, 18vw, 90px);
+    top: 38%;
   }
 
   .carousel-btn {
