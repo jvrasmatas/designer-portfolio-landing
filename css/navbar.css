@@ -45,7 +45,7 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
+  gap: clamp(3rem, 8vw, 9rem);
   flex: 1;
   justify-content: center;
 }
