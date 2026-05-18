@@ -10,7 +10,7 @@
 /* Title — matches other section headings */
 .services-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 0.92;
