@@ -1,0 +1,73 @@
+/* ── 3D Logo tilt effect ── */
+.logo-3d-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(220px, 28vw, 420px);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+
+  /* Perspective for the child tilt */
+  perspective: 800px;
+  perspective-origin: center center;
+}
+
+/* Floating animation base */
+.logo-3d-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 6%;
+  background: radial-gradient(ellipse, rgba(37, 99, 46, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: logo-shadow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.logo-3d-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform-style: preserve-3d;
+
+  /* Default neutral position */
+  transform: rotateX(0deg) rotateY(0deg) scale(1);
+
+  /* Smooth follow — fast enough to feel live, slow enough to be elegant */
+  transition: transform 120ms linear;
+
+  /* Float animation */
+  animation: logo-float 5s ease-in-out infinite;
+
+  /* Green glow */
+  filter: drop-shadow(0 0 28px rgba(37, 99, 46, 0.55))
+          drop-shadow(0 16px 40px rgba(0, 0, 0, 0.6));
+
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Gentle floating up/down */
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0px)   rotateX(0deg) rotateY(0deg); }
+  50%       { transform: translateY(-14px) rotateX(0deg) rotateY(0deg); }
+}
+
+/* Shadow shrinks when logo floats up */
+@keyframes logo-shadow {
+  0%, 100% { transform: translateX(-50%) scaleX(1);    opacity: 0.8; }
+  50%       { transform: translateX(-50%) scaleX(0.65); opacity: 0.4; }
+}
+
+/* While cursor is interacting — pause float, JS takes over transform */
+.logo-3d-img.is-tilting {
+  animation-play-state: paused;
+  transition: transform 80ms linear;
+}
