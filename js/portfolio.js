@@ -40,8 +40,9 @@ function buildCarousel() {
     card.dataset.index = String(i);
     card.innerHTML = `
       <img src="${artist.cover}" alt="${artist.name}" draggable="false" />
-      <div class="carousel-card-overlay">
-        <span class="carousel-card-overlay-label">View work</span>
+      <div class="carousel-card-label">
+        <span class="carousel-card-dot"></span>
+        <span class="carousel-card-name">${artist.name}</span>
       </div>
     `;
 

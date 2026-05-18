@@ -97,12 +97,13 @@ spline-viewer {
 
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 8vw, 8rem);
+  font-size: clamp(2.8rem, 7vw, 7rem);
   font-weight: 700;
-  line-height: 0.82;
-  letter-spacing: -0.04em;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   color: var(--color-text);
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .hero-headline-line {
@@ -127,6 +128,10 @@ spline-viewer {
 .hero-headline .outline {
   -webkit-text-stroke: 1.5px var(--color-text);
   color: transparent;
+}
+
+.hero-headline .filled {
+  color: var(--color-text);
 }
 
 .hero-description {
