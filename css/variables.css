@@ -8,9 +8,9 @@
   --color-text: #ffffff;
   --color-text-muted: #888888;
   --color-text-dim: #444444;
-  --color-accent: #25632E;
-  --color-accent-hover: #1d4f24;
-  --color-accent-light: #2e7a39;
+  --color-accent: #0e6e3f;
+  --color-accent-hover: #0a5530;
+  --color-accent-light: #128a4f;
   --color-white: #ffffff;
   --color-success: #25632E;
 
@@ -45,7 +45,7 @@
   /* Layout */
   --container-max: 1320px;
   --container-padding: clamp(1.5rem, 5vw, 4rem);
-  --section-padding: clamp(5rem, 10vw, 9rem);
+  --section-padding: clamp(3rem, 5vw, 5rem);
 
   /* Border radius */
   --radius-sm: 6px;
@@ -64,7 +64,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 0 30px rgba(37, 99, 46, 0.25);
+  --shadow-accent: 0 0 30px rgba(14, 110, 63, 0.25);
 
   /* Z-index */
   --z-base: 1;

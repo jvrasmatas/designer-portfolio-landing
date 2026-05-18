@@ -1,7 +1,7 @@
 /* ── Projects section ── */
 .projects {
   background: var(--color-bg);
-  padding-top: var(--section-padding);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
 }
 
 .projects-header-wrap {
@@ -210,7 +210,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: var(--space-10);
+  padding-block: var(--space-6);
   border-top: 1px solid var(--color-border);
 }
 

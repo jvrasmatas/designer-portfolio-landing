@@ -5,7 +5,7 @@
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
 }
 
@@ -13,9 +13,9 @@
 .contact-left {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-5);
   position: sticky;
-  top: calc(80px + var(--space-8));
+  top: calc(80px + var(--space-4));
 }
 
 .contact-tagline {
@@ -107,10 +107,10 @@
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
 }
 
 .form-row {
