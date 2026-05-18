@@ -1,133 +1,167 @@
-// Real project data from behance.net/kiriacosvr
+// Artist data — replace with real names, images and projects when available
 export const artists = [
   {
-    id: 'maria-becerra',
-    name: 'Maria Becerra',
-    discipline: 'Album Cover · Art Direction',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/1ec675244448229.Y3JvcCwxMDUwLDgyMSwyMCw4NQ.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/244448229/Maria-Becerra-River-360',
+    id: 'artist-1',
+    name: 'Artist Name',
+    discipline: 'Album Cover · Branding',
+    // Grid card photo — dark moody artist portrait
+    cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=700&q=85',
     works: [
       {
-        title: 'River 360',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/1ec675244448229.Y3JvcCwxMDUwLDgyMSwyMCw4NQ.jpg',
-        type: 'Art Direction', year: 2025,
-        url: 'https://www.behance.net/gallery/244448229/Maria-Becerra-River-360'
+        title: 'Debut Album Cover',
+        image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=700&q=85',
+        type: 'Cover', year: 2025
       },
       {
-        title: 'Infinitos como el mar',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/951c58243422431.Y3JvcCwzMDAwLDIzNDYsMCw2Ng.jpg',
-        type: 'Cover', year: 2025,
-        url: 'https://www.behance.net/gallery/243422431/Infinitos-como-el-mar-Maria-Bcerra'
+        title: 'Brand Identity System',
+        image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f664?w=700&q=85',
+        type: 'Branding', year: 2025
       },
       {
-        title: '5 pa\' las 12 feat. Arcángel',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/f61992238326885.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg',
-        type: 'Cover', year: 2024,
-        url: 'https://www.behance.net/gallery/238326885/5-pa-las-12-Arcangel-Maria-Becerra'
+        title: 'Tour Poster Series',
+        image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c6f?w=700&q=85',
+        type: 'Print', year: 2025
       },
       {
-        title: 'Ramen para dos feat. Paulo Londra',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/da09e7237860613.Y3JvcCwxNDU3LDExNDAsNjAyLDA.jpg',
-        type: 'Cover', year: 2024,
-        url: 'https://www.behance.net/gallery/237860613/Maria-Becerra-x-Paulo-Londra-Ramen-para-dos'
-      },
-      {
-        title: 'Tatú',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/b9902f235174283.Y3JvcCwzMDAwLDIzNDYsMCww.jpg',
-        type: 'Cover', year: 2024,
-        url: 'https://www.behance.net/gallery/235174283/Maria-Becerra-Tatu'
+        title: 'Social Media Kit',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85',
+        type: 'Digital', year: 2025
       },
     ]
   },
   {
-    id: 'maxi-espindola',
-    name: 'Maxi Espindola',
-    discipline: 'Cover Design',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/c9c0f7243422055.Y3JvcCwzMDAwLDIzNDYsMCww.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/243422055/Amor-Sincero-Maxi-Espindola',
+    id: 'artist-2',
+    name: 'Artist Name',
+    discipline: 'Art Direction · Visual Identity',
+    // Stage performance silhouette
+    cover: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=85',
     works: [
       {
-        title: 'Amor Sincero',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/c9c0f7243422055.Y3JvcCwzMDAwLDIzNDYsMCww.jpg',
-        type: 'Cover', year: 2025,
-        url: 'https://www.behance.net/gallery/243422055/Amor-Sincero-Maxi-Espindola'
+        title: 'EP Cover Design',
+        image: 'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=700&q=85',
+        type: 'Cover', year: 2025
+      },
+      {
+        title: 'Campaign Art Direction',
+        image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&q=85',
+        type: 'Art Direction', year: 2025
+      },
+      {
+        title: 'Merchandise Collection',
+        image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=700&q=85',
+        type: 'Merch', year: 2024
+      },
+      {
+        title: 'Press Kit Design',
+        image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=700&q=85',
+        type: 'Print', year: 2024
       },
     ]
   },
   {
-    id: 'lit-killah',
-    name: 'Lit Killah & Neutro Shorty',
-    discipline: 'Cover Design',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/ed45f2243419231.Y3JvcCwzMDAwLDIzNDYsMCww.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/243419231/Dresscode-Lit-Killah-Neutro-Shorty',
+    id: 'artist-3',
+    name: 'Artist Name',
+    discipline: 'Full Branding · Packaging',
+    // Recording studio atmosphere
+    cover: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=700&q=85',
     works: [
       {
-        title: 'Dresscode',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/ed45f2243419231.Y3JvcCwzMDAwLDIzNDYsMCww.jpg',
-        type: 'Cover', year: 2025,
-        url: 'https://www.behance.net/gallery/243419231/Dresscode-Lit-Killah-Neutro-Shorty'
+        title: 'Full Brand System',
+        image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f664?w=700&q=85',
+        type: 'Branding', year: 2024
+      },
+      {
+        title: 'Album Packaging Design',
+        image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=700&q=85',
+        type: 'Packaging', year: 2024
+      },
+      {
+        title: 'Digital Campaign',
+        image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c6f?w=700&q=85',
+        type: 'Digital', year: 2024
+      },
+      {
+        title: 'Vinyl Artwork',
+        image: 'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=700&q=85',
+        type: 'Print', year: 2024
       },
     ]
   },
   {
-    id: 'elena-rose',
-    name: 'Elena Rose',
-    discipline: 'Cover Design',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/ed517d236597121.Y3JvcCwzMDAwLDIzNDYsMCwzMjY.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/236597121/Elena-Rose-Carteras-Chinas',
+    id: 'artist-4',
+    name: 'Artist Name',
+    discipline: 'Cover Art · Motion',
+    // Dramatic dark portrait
+    cover: 'https://images.unsplash.com/photo-1534126511673-b6899657816a?w=700&q=85',
     works: [
       {
-        title: 'Carteras Chinas',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/ed517d236597121.Y3JvcCwzMDAwLDIzNDYsMCwzMjY.jpg',
-        type: 'Cover', year: 2024,
-        url: 'https://www.behance.net/gallery/236597121/Elena-Rose-Carteras-Chinas'
+        title: 'Single Cover Series',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85',
+        type: 'Cover', year: 2024
+      },
+      {
+        title: 'Animated Lyric Visuals',
+        image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&q=85',
+        type: 'Motion', year: 2024
+      },
+      {
+        title: 'Promo Photography Direction',
+        image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=700&q=85',
+        type: 'Art Direction', year: 2023
       },
     ]
   },
   {
-    id: 'juliito',
-    name: 'Juliito',
-    discipline: 'EP Design',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/d79485235174469.Y3JvcCwzMDAwLDIzNDYsMCwzMjY.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/235174469/Juliito-El-Casti-(EP)',
+    id: 'artist-5',
+    name: 'Artist Name',
+    discipline: 'Album Cover · Editorial',
+    // Vinyl / music object close-up
+    cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700&q=85',
     works: [
       {
-        title: 'El Casti (EP)',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/d79485235174469.Y3JvcCwzMDAwLDIzNDYsMCwzMjY.jpg',
-        type: 'Cover', year: 2024,
-        url: 'https://www.behance.net/gallery/235174469/Juliito-El-Casti-(EP)'
+        title: 'International Album Cover',
+        image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=700&q=85',
+        type: 'Cover', year: 2023
+      },
+      {
+        title: 'Editorial Spread Design',
+        image: 'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=700&q=85',
+        type: 'Editorial', year: 2023
+      },
+      {
+        title: 'Tour Poster',
+        image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f664?w=700&q=85',
+        type: 'Print', year: 2023
+      },
+      {
+        title: 'Deluxe Edition Packaging',
+        image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=700&q=85',
+        type: 'Packaging', year: 2023
       },
     ]
   },
   {
-    id: 'lalo-yaha',
-    name: 'Lalo Yaha',
-    discipline: 'Album Design',
-    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/3e5794235173995.Y3JvcCwzMDAwLDIzNDYsMCwzNzg.jpg',
-    behanceUrl: 'https://www.behance.net/gallery/235173995/Lalo-Yaha-Cartas-a-Nadie-(Album)',
+    id: 'artist-6',
+    name: 'Artist Name',
+    discipline: 'Branding · Art Direction',
+    // Stage silhouette with dramatic light
+    cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=700&q=85',
     works: [
       {
-        title: 'Cartas a Nadie (Album)',
-        image: 'https://mir-s3-cdn-cf.behance.net/projects/404/3e5794235173995.Y3JvcCwzMDAwLDIzNDYsMCwzNzg.jpg',
-        type: 'Album Design', year: 2024,
-        url: 'https://www.behance.net/gallery/235173995/Lalo-Yaha-Cartas-a-Nadie-(Album)'
+        title: 'Visual Identity System',
+        image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c6f?w=700&q=85',
+        type: 'Branding', year: 2023
+      },
+      {
+        title: 'Debut Album Artwork',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85',
+        type: 'Cover', year: 2023
+      },
+      {
+        title: 'Digital Content Pack',
+        image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&q=85',
+        type: 'Digital', year: 2023
       },
     ]
-  },
-];
-
-// Standalone projects (non-music-artist) for work.html only
-export const standaloneProjects = [
-  {
-    title: 'Grammy Posters — Vol. I',
-    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/b05981243413343.Y3JvcCwyMTYwLDE2ODksMCw1OTM.jpg',
-    type: 'Poster Design', year: 2025,
-    url: 'https://www.behance.net/gallery/243413343/Grammy-Posters-Vol-I'
-  },
-  {
-    title: 'Stake F1 Team — Hungarian GP',
-    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/663203238327245.Y3JvcCwyMTYwLDE2ODksMCww.png',
-    type: 'Sports Design', year: 2024,
-    url: 'https://www.behance.net/gallery/238327245/Stake-F1-Team-Hungarian-GP-Poster-design-Challenge'
-  },
+  }
 ];
