@@ -3,19 +3,39 @@
 }
 
 .contact-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Top block: label + heading + tagline */
+.contact-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Bottom block: form left, details right */
+.contact-bottom {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
 }
 
-/* Left */
+/* Right sidebar — contact details + socials */
 .contact-left {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  position: sticky;
-  top: calc(80px + var(--space-4));
+  min-width: 220px;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (max-width: 768px) {
+  .contact-bottom {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-tagline {
