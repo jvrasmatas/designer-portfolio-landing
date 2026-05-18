@@ -16,7 +16,7 @@
     linear-gradient(to right, var(--color-border-subtle) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-border-subtle) 1px, transparent 1px);
   background-size: 80px 80px;
-  opacity: 0.4;
+  opacity: 0.5;
   pointer-events: none;
 }
 

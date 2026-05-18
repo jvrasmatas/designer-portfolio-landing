@@ -88,7 +88,7 @@ body {
 /* Selection */
 ::selection {
   background: var(--color-accent);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 /* Focus visible */
