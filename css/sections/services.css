@@ -23,21 +23,26 @@
   flex-direction: column;
 }
 
-/* Each row */
+/* Each item wrapper */
 .service-item {
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.service-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Clickable row */
+.service-row {
   display: grid;
   grid-template-columns: 3rem 1fr auto;
   align-items: center;
   gap: var(--space-4);
   padding-block: var(--space-4);
-  border-top: 1px solid var(--color-border);
-  text-decoration: none;
-  position: relative;
-  transition: background var(--duration-fast) var(--ease-smooth);
-}
-
-.service-item:last-child {
-  border-bottom: 1px solid var(--color-border);
+  user-select: none;
 }
 
 /* Index number */
@@ -60,31 +65,58 @@
   transition: color var(--duration-fast) var(--ease-smooth);
 }
 
-/* Arrow */
+/* Plus/minus icon */
 .service-arrow {
   color: var(--color-text-dim);
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
   transition: color var(--duration-fast) var(--ease-smooth),
               transform var(--duration-base) var(--ease-smooth);
 }
 
-/* Hover */
-.service-item:hover .service-index {
+/* Description — collapsed by default */
+.service-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-base) var(--ease-smooth),
+              padding var(--duration-base) var(--ease-smooth);
+  padding-bottom: 0;
+}
+
+.service-desc > p {
+  overflow: hidden;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: calc(3rem + var(--space-4));
+  padding-right: var(--space-8);
+}
+
+/* Open state */
+.service-item.open .service-desc {
+  grid-template-rows: 1fr;
+  padding-bottom: var(--space-5);
+}
+
+.service-item.open .service-arrow {
+  transform: rotate(45deg);
   color: var(--color-accent);
 }
 
-.service-item:hover .service-name {
+.service-item.open .service-index,
+.service-item.open .service-name {
   color: var(--color-accent);
 }
 
-.service-item:hover .service-arrow {
+/* Hover (not open) */
+.service-item:not(.open):hover .service-index {
   color: var(--color-accent);
-  transform: translate(3px, -3px);
 }
 
-/* Animated underline on hover */
+.service-item:not(.open):hover .service-name {
+  color: var(--color-accent);
+}
+
+/* Animated underline */
 .service-item::after {
   content: '';
   position: absolute;
@@ -96,15 +128,21 @@
   transition: width var(--duration-slow) var(--ease-smooth);
 }
 
+.service-item.open::after,
 .service-item:hover::after {
   width: 100%;
 }
 
 /* Responsive */
 @media (max-width: 640px) {
-  .service-item {
+  .service-row {
     grid-template-columns: 2.5rem 1fr auto;
     gap: var(--space-3);
     padding-block: var(--space-3);
+  }
+
+  .service-desc > p {
+    padding-left: calc(2.5rem + var(--space-3));
+    padding-right: 0;
   }
 }
