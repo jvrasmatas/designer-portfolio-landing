@@ -68,21 +68,7 @@ spline-viewer {
   width: 100%;
   height: 100%;
   display: block;
-  /* Spline default bg is white — force transparent via CSS filter trick */
-  border-radius: var(--radius-lg);
-}
-
-/* Mask out the Spline default white watermark area at bottom */
-.hero-spline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background: var(--color-bg);
-  z-index: 10;
-  pointer-events: none;
+  background: transparent;
 }
 
 /* Stats row — full width */
