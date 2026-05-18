@@ -47,7 +47,7 @@
       <nav class="navbar-links" aria-label="Main navigation">
         <a href="#home" class="navbar-link active">Home</a>
         <a href="#about" class="navbar-link">About</a>
-        <a href="#projects" class="navbar-link">Projects</a>
+        <a href="#projects" class="navbar-link">My work</a>
         <a href="#services" class="navbar-link">Services</a>
         <a href="#contact" class="navbar-link">Contact</a>
       </nav>
@@ -77,6 +77,13 @@
          HOME / HERO
     ═══════════════════════════════════════ -->
     <section class="hero" id="home" aria-label="Home">
+
+      <!-- Background video -->
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/landing background.mp4" type="video/mp4" />
+      </video>
+      <!-- Overlay to keep text readable -->
+      <div class="hero-video-overlay" aria-hidden="true"></div>
 
       <div class="container hero-inner">
 
@@ -207,7 +214,7 @@
           <div>
             <p class="section-label">Projects</p>
             <h2 class="section-heading reveal">
-              Clients I've <span class="text-accent">worked with.</span>
+              <span class="text-accent">Projects</span>
             </h2>
           </div>
           <p class="text-muted reveal" style="font-size:var(--text-sm); max-width:260px; text-align:right; line-height:1.6;">
