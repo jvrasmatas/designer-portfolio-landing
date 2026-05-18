@@ -4,7 +4,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-block: calc(var(--section-padding) + 5rem);
+  padding-block: calc(var(--section-padding) + 2rem) var(--space-12);
 }
 
 /* Background grid */
@@ -27,78 +27,91 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40%;
+  height: 30%;
   background: linear-gradient(to bottom, transparent, var(--color-bg));
   pointer-events: none;
+  z-index: 1;
 }
 
+/* ── Two-column grid ── */
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 0 clamp(2rem, 4vw, 5rem);
+  min-height: calc(100vh - 80px);
   position: relative;
-  z-index: var(--z-base);
+  z-index: 2;
+  align-items: center;
 }
 
-/* Hero background image — faded on the right */
-.hero-bg-image {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 42%;
+/* Left column */
+.hero-left {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+}
+
+/* Right column — Spline viewer */
+.hero-spline {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
   height: 100%;
-  pointer-events: none;
-  z-index: 0;
+  min-height: 460px;
 }
 
-.hero-bg-image img {
+spline-viewer {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  opacity: 0.18;
-  filter: grayscale(60%);
+  display: block;
+  /* Spline default bg is white — force transparent via CSS filter trick */
+  border-radius: var(--radius-lg);
 }
 
-/* Fade left edge of the image into the background */
-.hero-bg-image::before {
+/* Mask out the Spline default white watermark area at bottom */
+.hero-spline::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, var(--color-bg) 0%, transparent 40%);
-  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: var(--color-bg);
+  z-index: 10;
+  pointer-events: none;
 }
 
-/* Fade top and bottom */
-.hero-bg-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, var(--color-bg) 0%, transparent 20%, transparent 75%, var(--color-bg) 100%);
-  z-index: 1;
+/* Stats row — full width */
+.hero-stats {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .hero-bg-image {
-    width: 100%;
-    opacity: 0.08;
-  }
+.hero-stats .stat-number {
+  font-size: clamp(1.8rem, 3vw, 3rem);
 }
 
-/* Top meta row */
+/* ── Text elements ── */
 .hero-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   gap: var(--space-4);
+  flex-wrap: wrap;
 }
 
-/* Main headline */
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 9.5rem);
+  font-size: clamp(3.2rem, 8vw, 8rem);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -121,10 +134,6 @@
   transition-delay: 80ms;
 }
 
-.hero-headline-line:nth-child(3) span {
-  transition-delay: 160ms;
-}
-
 .hero.loaded .hero-headline-line span {
   transform: translateY(0);
 }
@@ -134,16 +143,8 @@
   color: transparent;
 }
 
-/* Bottom row */
-.hero-bottom {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: var(--space-8);
-}
-
 .hero-description {
-  max-width: 480px;
+  max-width: 420px;
   color: var(--color-text-muted);
   font-size: var(--text-lg);
   line-height: 1.65;
@@ -156,24 +157,10 @@
   flex-wrap: wrap;
 }
 
-/* Stats row */
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--color-border);
-  flex-wrap: wrap;
-}
-
-.hero-stats .stat-number {
-  font-size: clamp(1.8rem, 3vw, 3rem);
-}
-
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: var(--space-10);
+  bottom: var(--space-6);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -184,30 +171,47 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  z-index: var(--z-base);
+  z-index: 5;
 }
 
 .scroll-line {
   width: 1px;
-  height: 60px;
+  height: 50px;
   background: linear-gradient(to bottom, var(--color-text-dim), transparent);
   animation: scroll-line-anim 2s ease-in-out infinite;
 }
 
 @keyframes scroll-line-anim {
-  0%, 100% { transform: scaleY(1); opacity: 1; }
-  50% { transform: scaleY(0.4); opacity: 0.4; }
+  0%, 100% { transform: scaleY(1);   opacity: 1; }
+  50%       { transform: scaleY(0.4); opacity: 0.4; }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-bottom {
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-inner {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+    gap: var(--space-8);
   }
 
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-left {
+    grid-column: 1;
+    grid-row: 1;
+    padding-block: var(--space-4);
+  }
+
+  .hero-spline {
+    grid-column: 1;
+    grid-row: 2;
+    height: 55vw;
+    min-height: 280px;
+    max-height: 420px;
+  }
+
+  .hero-stats {
+    grid-column: 1;
+    grid-row: 3;
   }
 
   .scroll-indicator {

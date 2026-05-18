@@ -12,6 +12,9 @@
   <meta property="og:description" content="Album covers, branding and art direction for international artists." />
   <meta property="og:type" content="website" />
 
+  <!-- Spline 3D viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.94/build/spline-viewer.js"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/variables.css" />
@@ -75,45 +78,46 @@
          HOME / HERO
     ═══════════════════════════════════════ -->
     <section class="hero" id="home" aria-label="Home">
-      <!-- Faded background image right side -->
-      <div class="hero-bg-image" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80" alt="" />
-      </div>
 
       <div class="container hero-inner">
 
-        <!-- Meta row -->
-        <div class="hero-meta">
-          <div class="badge">
-            <span class="badge-dot" aria-hidden="true"></span>
-            Available for projects
-          </div>
-          <span class="text-muted" style="font-size: var(--text-sm);">Music graphic design · International</span>
-        </div>
-
-        <!-- Headline -->
-        <h1 class="hero-headline" aria-label="Trust the process.">
-          <span class="hero-headline-line"><span>Trust the</span></span>
-          <span class="hero-headline-line"><span class="outline">process.</span></span>
-        </h1>
-
-        <!-- Bottom row — description + CTAs only -->
-        <div class="hero-bottom">
-          <div>
-            <p class="hero-description">
-              I create visual identities, album covers and art direction for artists who want their image to speak as loud as their music.
-            </p>
-            <div class="hero-actions" style="margin-top: var(--space-8);">
-              <a href="#projects" class="btn btn-primary">
-                See my work
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
-              <a href="#contact" class="btn btn-secondary">Get in touch</a>
+        <!-- Left column: badge + headline + description + CTAs -->
+        <div class="hero-left">
+          <div class="hero-meta">
+            <div class="badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Available for projects
             </div>
+            <span class="text-muted" style="font-size: var(--text-sm);">Music graphic design · International</span>
+          </div>
+
+          <h1 class="hero-headline" aria-label="Trust the process.">
+            <span class="hero-headline-line"><span>Trust the</span></span>
+            <span class="hero-headline-line"><span class="outline">process.</span></span>
+          </h1>
+
+          <p class="hero-description">
+            I create visual identities, album covers and art direction for artists who want their image to speak as loud as their music.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              See my work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get in touch</a>
           </div>
         </div>
 
-        <!-- Stats row — all 5 stats in one single line -->
+        <!-- Right column: Spline 3D model -->
+        <div class="hero-spline">
+          <spline-viewer
+            url="https://prod.spline.design/xsgyYon9jjydqXPd/scene.splinecode"
+            events-target="global"
+          ></spline-viewer>
+        </div>
+
+        <!-- Stats row — full width -->
         <div class="hero-stats reveal">
           <div class="stat">
             <div><span class="stat-number" data-count="80">0</span><span class="stat-number">+</span></div>
