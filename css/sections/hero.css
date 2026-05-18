@@ -20,11 +20,7 @@
 }
 
 .hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(247, 246, 241, 0.55);
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 /* Background grid */
