@@ -44,7 +44,7 @@
 
   /* Layout */
   --container-max: 1320px;
-  --container-padding: clamp(1rem, 3vw, 2.5rem);
+  --container-padding: 1.5rem;
   --section-padding: clamp(3rem, 5vw, 5rem);
 
   /* Border radius */
