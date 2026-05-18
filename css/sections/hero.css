@@ -4,6 +4,8 @@
   align-items: stretch;
   position: relative;
   overflow: hidden;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
 }
 
 /* ── Background video ── */
@@ -83,7 +85,15 @@
 }
 
 .hero-meta { display: none; }
-.hero-description { display: none; }
+
+.hero-description {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  max-width: 420px;
+  margin-top: var(--space-4);
+}
 
 /* Right block: stats on top, buttons below */
 .hero-sidebar-right {
@@ -158,6 +168,40 @@
 }
 
 .badge-dot { background: #4ade80; }
+
+/* Scroll indicator — centered bottom, subtle */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  z-index: 5;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.scroll-indicator span {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+  animation: scroll-line-anim 2s ease-in-out infinite;
+}
+
+@keyframes scroll-line-anim {
+  0%, 100% { transform: scaleY(1);   opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.4; }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
