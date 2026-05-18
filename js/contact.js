@@ -13,7 +13,7 @@ export function initContact() {
     submitBtn.querySelector('.btn-text').textContent = 'Sending...';
 
     try {
-      const res = await fetch('https://formspree.io/f/xpqnzdvy', {
+      const res = await fetch('https://formspree.io/f/mzdwbgpr', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: new FormData(form),
