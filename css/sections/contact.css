@@ -21,7 +21,7 @@
 .contact-tagline {
   font-size: var(--text-lg);
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.4;
   max-width: 380px;
 }
 
@@ -177,7 +177,7 @@
 .form-textarea {
   resize: vertical;
   min-height: 140px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 
 /* Submit */
