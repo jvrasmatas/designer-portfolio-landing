@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
 }
 
 /* Logo — smaller, lighter */

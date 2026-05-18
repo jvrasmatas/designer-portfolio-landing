@@ -4,7 +4,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-block: calc(var(--section-padding) + 1rem) var(--space-6);
+  padding-block: calc(var(--section-padding) - 1rem) var(--space-6);
 }
 
 /* Background grid */
