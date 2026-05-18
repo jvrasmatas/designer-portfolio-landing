@@ -35,39 +35,9 @@
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-10);
+  gap: var(--space-12);
   position: relative;
   z-index: var(--z-base);
-}
-
-/* Two-column main row: text | logo */
-.hero-main-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
-}
-
-.hero-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-}
-
-/* Actions inside text col */
-.hero-text-col .hero-actions {
-  margin-top: 0;
-}
-
-@media (max-width: 768px) {
-  .hero-main-row {
-    grid-template-columns: 1fr;
-  }
-
-  .logo-3d-wrapper {
-    width: clamp(160px, 50vw, 260px) !important;
-    margin: 0 auto;
-  }
 }
 
 /* Hero background image — faded on the right */

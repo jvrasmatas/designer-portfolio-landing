@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/logo3d.css" />
   <link rel="stylesheet" href="css/sections/hero.css" />
   <link rel="stylesheet" href="css/sections/about.css" />
   <link rel="stylesheet" href="css/sections/portfolio.css" />
@@ -92,21 +91,19 @@
           <span class="text-muted" style="font-size: var(--text-sm);">Music graphic design · International</span>
         </div>
 
-        <!-- Main row: text left, logo right -->
-        <div class="hero-main-row">
+        <!-- Headline -->
+        <h1 class="hero-headline" aria-label="Trust the process.">
+          <span class="hero-headline-line"><span>Trust the</span></span>
+          <span class="hero-headline-line"><span class="outline">process.</span></span>
+        </h1>
 
-          <!-- Left: headline + description + CTAs -->
-          <div class="hero-text-col">
-            <h1 class="hero-headline" aria-label="Trust the process.">
-              <span class="hero-headline-line"><span>Trust the</span></span>
-              <span class="hero-headline-line"><span class="outline">process.</span></span>
-            </h1>
-
+        <!-- Bottom row — description + CTAs only -->
+        <div class="hero-bottom">
+          <div>
             <p class="hero-description">
               I create visual identities, album covers and art direction for artists who want their image to speak as loud as their music.
             </p>
-
-            <div class="hero-actions">
+            <div class="hero-actions" style="margin-top: var(--space-8);">
               <a href="#projects" class="btn btn-primary">
                 See my work
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
@@ -114,18 +111,6 @@
               <a href="#contact" class="btn btn-secondary">Get in touch</a>
             </div>
           </div>
-
-          <!-- Right: 3D logo with cursor tracking -->
-          <div class="logo-3d-wrapper" id="logo3dWrapper">
-            <img
-              class="logo-3d-img"
-              id="logo3dImg"
-              src="assets/images/logo-3d.png"
-              alt="Kiriacos logo"
-              draggable="false"
-            />
-          </div>
-
         </div>
 
         <!-- Stats row — all 5 stats in one single line -->
