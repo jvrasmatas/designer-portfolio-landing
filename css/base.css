@@ -1,8 +1,15 @@
+/* ── Fluid root font-size: 1rem = 16px at 1440px viewport ──
+   Formula: (16/1440)*100 = 1.111vw
+   clamp: never below 10px (mobile), never above 22px (4K+) */
+html {
+  font-size: clamp(10px, 1.111vw, 22px);
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: 1rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
   cursor: none;
@@ -45,7 +52,7 @@ body {
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: 5rem;
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.04em;

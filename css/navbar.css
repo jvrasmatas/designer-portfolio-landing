@@ -19,13 +19,13 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
-  padding-inline: clamp(1rem, 2.5vw, 2rem);
+  padding-inline: 1.5rem;
 }
 
 /* Logo */
 .navbar-logo {
   font-family: var(--font-display);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--color-text);
@@ -41,13 +41,13 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: clamp(1.5rem, 5vw, 7rem);
+  gap: 5rem;
   flex: 1;
   justify-content: center;
 }
 
 .navbar-link {
-  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-size: 0.875rem;
   font-weight: 400;
   color: var(--color-text-muted);
   transition: color var(--duration-fast) var(--ease-smooth);

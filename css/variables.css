@@ -1,5 +1,5 @@
 :root {
-  /* Colors — Light theme: white bg, black text, green accent */
+  /* Colors */
   --color-bg: #f7f6f1;
   --color-bg-card: #f5f5f5;
   --color-bg-elevated: #eeeeee;
@@ -14,27 +14,27 @@
   --color-white: #ffffff;
   --color-success: #0e6e3f;
 
-  /* Typography — Helvetica system stack, no external font dependency */
+  /* Typography */
   --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  /* Font sizes */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 2rem;
+  /* Font sizes — all in rem, scale automatically with fluid root */
+  --text-xs:   0.75rem;   /* 12px at 1440 */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  2rem;      /* 32px */
 
-  /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
+  /* Spacing — rem scales with root */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
@@ -43,14 +43,14 @@
   --space-32: 8rem;
 
   /* Layout */
-  --container-max: 1320px;
-  --container-padding: 0.75rem;
-  --section-padding: clamp(3rem, 5vw, 5rem);
+  --container-max: 120rem;      /* 1920px at 1440 baseline */
+  --container-padding: 1.5rem;
+  --section-padding: 4rem;
 
-  /* Border radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  /* Border radius — rem so they scale too */
+  --radius-sm:   0.375rem;  /* 6px */
+  --radius-md:   0.75rem;   /* 12px */
+  --radius-lg:   1.25rem;   /* 20px */
   --radius-full: 9999px;
 
   /* Transitions */
@@ -61,10 +61,10 @@
   --duration-slow: 600ms;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
-  --shadow-accent: 0 0 30px rgba(14, 110, 63, 0.2);
+  --shadow-sm: 0 0.0625rem 0.1875rem rgba(0,0,0,0.08);
+  --shadow-md: 0 0.25rem 1.25rem rgba(0,0,0,0.1);
+  --shadow-lg: 0 0.5rem 2.5rem rgba(0,0,0,0.12);
+  --shadow-accent: 0 0 1.875rem rgba(14,110,63,0.2);
 
   /* Z-index */
   --z-base: 1;

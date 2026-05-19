@@ -4,16 +4,16 @@
 }
 
 .services-header {
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
 }
 
 /* Title — matches other section headings */
 .services-title {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: 5rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
   color: var(--color-text);
 }
 
@@ -40,8 +40,8 @@
   display: grid;
   grid-template-columns: clamp(2rem, 4vw, 3rem) 1fr auto;
   align-items: center;
-  gap: clamp(var(--space-3), 2vw, var(--space-4));
-  padding-block: clamp(var(--space-3), 1.5vw, var(--space-4));
+  gap: var(--space-4);
+  padding-block: var(--space-4);
   user-select: none;
 }
 
@@ -84,11 +84,11 @@
 
 .service-desc > p {
   overflow: hidden;
-  font-size: clamp(0.8rem, 1.2vw, var(--text-sm));
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.5;
-  padding-left: clamp(2.5rem, 5vw, calc(3rem + var(--space-4)));
-  padding-right: clamp(0, 3vw, var(--space-8));
+  padding-left: calc(clamp(2rem, 4vw, 3rem) + var(--space-4));
+  padding-right: var(--space-8);
 }
 
 /* Open state */
