@@ -44,7 +44,7 @@
 
   /* Layout */
   --container-max: 120rem;      /* 1920px at 1440 baseline */
-  --container-padding: 3rem;
+  --container-padding: 12rem;
   --section-padding: 4rem;
 
   /* Border radius — rem so they scale too */
