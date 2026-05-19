@@ -9,11 +9,22 @@ export function initPortfolio() {
 // ─── State ───────────────────────────────────────────────────────────────────
 let activeIndex = 0;
 let isAnimating = false;
-let isMobile = window.innerWidth < 640;
+
+function getBreakpoint() {
+  const w = window.innerWidth;
+  if (w < 640)  return 'mobile';
+  if (w < 1024) return 'tablet';
+  return 'desktop';
+}
+
+let currentBreakpoint = getBreakpoint();
 
 window.addEventListener('resize', () => {
-  isMobile = window.innerWidth < 640;
-  applyRoles();
+  const bp = getBreakpoint();
+  if (bp !== currentBreakpoint) {
+    currentBreakpoint = bp;
+    applyRoles();
+  }
 }, { passive: true });
 
 // ─── DOM refs ─────────────────────────────────────────────────────────────────
@@ -137,17 +148,27 @@ const DESKTOP = {
   back:   { left:'50%', height:'14%', bottom:'14%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
 };
 
+const TABLET = {
+  center: { left:'50%', height:'70%', bottom:'0',   transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
+  left1:  { left:'24%', height:'38%', bottom:'8%',  transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  right1: { left:'76%', height:'38%', bottom:'8%',  transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  left2:  { left:'8%',  height:'22%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.35', zIndex:'5'  },
+  right2: { left:'92%', height:'22%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.35', zIndex:'5'  },
+  back:   { left:'50%', height:'12%', bottom:'14%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
+};
+
 const MOBILE = {
-  center: { left:'50%', height:'62%', bottom:'4%',  transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
-  left1:  { left:'18%', height:'26%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
-  right1: { left:'82%', height:'26%', bottom:'12%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
-  left2:  { left:'-4%', height:'14%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
-  right2: { left:'104%',height:'14%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
-  back:   { left:'50%', height:'8%',  bottom:'20%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
+  center: { left:'50%', height:'55%', bottom:'8%',  transform:'translateX(-50%)', filter:'none',      opacity:'1',    zIndex:'20' },
+  left1:  { left:'18%', height:'24%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  right1: { left:'82%', height:'24%', bottom:'16%', transform:'translateX(-50%)', filter:'blur(2px)', opacity:'0.75', zIndex:'10' },
+  left2:  { left:'-4%', height:'13%', bottom:'20%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  right2: { left:'104%',height:'13%', bottom:'20%', transform:'translateX(-50%)', filter:'blur(4px)', opacity:'0.3',  zIndex:'5'  },
+  back:   { left:'50%', height:'8%',  bottom:'24%', transform:'translateX(-50%)', filter:'blur(6px)', opacity:'0',    zIndex:'1'  },
 };
 
 function getStyle(role) {
-  const map = isMobile ? MOBILE : DESKTOP;
+  const maps = { desktop: DESKTOP, tablet: TABLET, mobile: MOBILE };
+  const map = maps[currentBreakpoint] || DESKTOP;
   return { ...map[role] || map.back, transition: TRANSITION, position: 'absolute', aspectRatio: '1/1' };
 }
 
